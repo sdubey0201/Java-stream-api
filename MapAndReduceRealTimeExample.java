@@ -45,6 +45,14 @@ public class MapAndReduceRealTimeExample {
                 .map(employee -> employee.getSalary() * 12)
                 .reduce(0.0, (aDouble, aDouble2) -> aDouble + aDouble2);
         System.out.println(reduce1);
+//        Scenario:
+//        You want to calculate the total years of experience
+//        across all employees in a company.
+
+        Integer reduce2 = employees.stream()
+                .map(Employee::getYearOfExperience)
+                .reduce(0, Integer::sum);
+        System.out.println(reduce2);
 
 
     }
